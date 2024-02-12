@@ -19,6 +19,14 @@ input#check {
     position: absolute;
     left: 20px;
     top: 10px;
+
+}
+
+.fa-solid {
+    cursor: pointer;
+}
+.fa-solid:hover {
+    transform: scale(1.2);
 }
 
 .sidebar_menu {
@@ -27,66 +35,116 @@ input#check {
     box-shadow: 0 0 5px rgb(255, 255, 255, 0.5);
     background-color: rgb(255, 255, 255, 0.1);
     height: 100vh;
+    left: -400px;
+    transition: left 1s ease;
 }
 
 .logo {
     position: absolute;
     top: 17px;
-    left: 60px;
+    left: 22px;
 }
 
 .logo a {
-    font-size: 20px;
+    font-size: 30px;
     color: white;
     text-decoration: none;
 }
+
 .btn_two {
     position: absolute;
     top: 17px;
     right: 10px;
 }
+
 label i.fa-solid.fa-xmark {
     font-size: 30px;
-    
+
 }
+
 label i.fa-solid.fa-xmark {
     font-size: 20px;
-    color: white;
-    display: none;
+
+    /* display: none; */
 }
+
+label i.fa-solid.fa-xmark:hover {
+    transform: scale(1.1);
+}
+
 .menu {
     position: absolute;
     top: 83px;
-    left: 20px;
+    /* left: 20px; */
+    width: 100%;
 }
-.menu  ul {
+
+.menu ul {
+    /* padding: 0 0 0 20px; */
     list-style: none;
 }
-.menu  li {
+
+.menu li {
     /* height: 12vh; */
+
     padding: 10px 0;
     margin: 20px 0 0 0;
 }
 
-.menu  a {
+.menu a {
     color: white;
     text-decoration: none;
     font-size: 20px;
     padding: 0 0 0 14px;
 }
 
-.menu  i {
+.menu ul>li:hover {
+    box-shadow: 0 0 5px rgb(255, 255, 255, 0.5);
+}
+
+.menu i {
     font-size: 25px;
     color: white;
+    padding: 0 0 0 20px;
 }
+
 .social_media {
     position: absolute;
     left: 30%;
     bottom: 10px;
 }
+
 .social_media ul a i {
     color: white;
     font-size: 20px;
     opacity: 0.4;
     margin: 0 5px;
+}
+
+.social_media ul a i:hover {
+
+    opacity: 1;
+    transform: scale(1.1);
+
+}
+
+.btn_one {
+    cursor: pointer;
+    z-index: 1;
+}
+#check:checked ~ .sidebar_menu {
+    left: 0;
+    transition: left 1s ease; /* Apply transition */
+}
+#check:checked ~ .btn_one{
+   left:-125px;
+    transition: left 1s ease;
+}
+#check:not(:checked) ~ .btn_one {
+    left: 30px;
+    transition: left 1s ease;
+}
+#check:checked ~ .btn_one{
+   left:-125px;
+    transition: left 1s ease;
 }
