@@ -134,17 +134,17 @@ label i.fa-solid.fa-xmark:hover {
 }
 #check:checked ~ .sidebar_menu {
     left: 0;
-    transition: left 1s ease; /* Apply transition */
+    transition: all 1s ease; /* Apply transition */
 }
 #check:checked ~ .btn_one{
    left:-125px;
-    transition: left 1s ease;
+    transition: all 1s ease;
 }
 #check:not(:checked) ~ .btn_one {
     left: 30px;
-    transition: left 1s ease;
+    transition: all 1s ease;
 }
 #check:checked ~ .btn_one{
    left:-125px;
-    transition: left 1s ease;
+    transition: all 1s ease;
 }
