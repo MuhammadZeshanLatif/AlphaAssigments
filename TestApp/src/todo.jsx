@@ -1,53 +1,79 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from 'uuid'
 const ToDo = () => {
-    const [list,setList]=useState([{vals:"First",id:uuidv4()}]);
-    const [item,setItem]=useState("");
-    const handleInput=(event)=>{
-            setItem(event.target.value);
+    const [list, setList] = useState([{ val: "Test", id: uuidv4(), done: false}])
+    const [item, setItem] = useState("")
+    const handleInput = (event) => {
+        console.log()
+        setItem(event.target.value)
     }
-    const add=()=>{
-        setList((e)=>{
-            return [...list,{vals:item,id:uuidv4()}]
+    const addTask = () => {
+        setList((e) => {
+            return [...list, { val: item, id: uuidv4(), done: false}]
         })
-    }
-    const deleteVal=(id)=>{
-         let copy =list.filter((e)=>e.id!=id);
-         setList(copy)
-    }
-    const uppercase=()=>{
-        let upr=list.map((e)=>{
-           return {
-            ...list, vals:e.vals.toUpperCase()
-           }
-        })
-        setList(upr)
-    }
 
+    }
+    const editTask = (id) => {
+        console.log("editTask")
+    }
+    const deleteTask = (id) => {
+        let dlt = list.filter((e) => e.id != id);
+        setList(dlt);
+    }
+    const doneTask = (id) => {
+        setList((es) => 
+           es.map((e)=>{
+            if (e.id == id) {
+                return {
+                      ...e,
+                      done:true  
+                }
+            }
+            else{
+                return e;
+            }
+           })
+
+        )
+        console.log()
+
+    }
+    const deleteAll = () => {
+        console.log("deleteAll")
+    }
+    const doneAll = () => {
+        console.log("doneAll")
+    }
     return (
         <>
-          <h1>ToDo List By Objectr</h1>
-          <br />
-          <input type="text" onChange={handleInput} />
-          <br />
-          <button onClick={add}>Add</button>
-          <hr />
-          <ul>
-            {
-                list.map((e)=>(
-                    <li key={e.id}>{e.vals}
-                    &nbsp;
-                    <button onClick={()=> deleteVal(e.id)}>Delete</button>
-                    </li>
-                    
-                ))
-            }
-          </ul>
-          <br />
-          <button onClick={uppercase}>Uppercase</button>
+            <h1>ToDo List</h1>
+            <input type="text" onChange={handleInput} />
+            <br /><br />
+            <button onClick={addTask}>Add</button>
+            <hr />
+            <ul>
+                {
+                    list.map((todo) => (
+                        <li key={todo.id} style={todo.done==true?{textDecoration:"line-through"}:{}}>
+                            {todo.val}
+                            &nbsp;&nbsp;
+                            <button onClick={() => editTask(todo.id)}>Edit</button>
+                            &nbsp;&nbsp;
+                            <button onClick={() => deleteTask(todo.id)}>Delete</button>
+                            &nbsp;&nbsp;
+                            <button onClick={() => doneTask(todo.id)}>Done</button>
+                            <br /><br />
+                        </li>
+
+                    ))
+                }
+            </ul>
+            <br />
+            <button onClick={deleteAll}>Delete All</button>
+            &nbsp;&nbsp;
+            <button onClick={doneAll}>Done All</button>
+
         </>
-
-
     )
 }
 export default ToDo;
