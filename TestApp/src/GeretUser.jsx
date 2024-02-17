@@ -5,4 +5,18 @@ const HeloUser = ({name,color,message}) => {
         </>
     );
 }
-export default HeloUser; 
+const Amazoncards=({title,name,imp,oldPrice,newPrice,idx})=>{
+    return(
+        <>
+        {/* <h1>Blogbuster deals on computer accosories</h1> */}
+        <div className="card">
+            <h3>{title}</h3>
+            <p>{name}</p>
+            <p>{imp}</p>
+            <p>{oldPrice[idx]} {newPrice[idx]}</p>
+        </div>
+        </>
+    )
+
+}
+export  {HeloUser,Amazoncards}; 
