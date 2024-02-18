@@ -3,6 +3,7 @@ import { HeloUser, Amazoncards } from './GeretUser'
 import { useState } from 'react'
 import ToDo from './todo';
 import AxiosPrac from './AxiosPrac';
+import AxiosPost from './AxiosPost';
 function App() {
   // const oldPrice = ["4400", "3400", "5540", "7895"]
   // const newPrice = ["54530", "878", "89222", "4595"]
@@ -30,8 +31,9 @@ function App() {
 
   return (
     <>
-    <AxiosPrac/>
+    {/* <AxiosPrac/> */}
     {/* <ToDo/> */}
+    <AxiosPost/>
       {/* <HeloUser name="Zeeshan" message="Hi" color={{'color':'green'}}/>
       <HeloUser name="Arman" message="From" color={{'color':'red'}}/> */}
 

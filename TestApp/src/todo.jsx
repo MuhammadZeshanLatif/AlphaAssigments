@@ -11,6 +11,7 @@ const ToDo = () => {
         setList((e) => {
             return [...list, { val: item, id: uuidv4(), done: false}]
         })
+        setItem("")
 
     }
     const editTask = (id) => {
@@ -47,7 +48,7 @@ const ToDo = () => {
     return (
         <>
             <h1>ToDo List</h1>
-            <input type="text" onChange={handleInput} />
+            <input type="text" value={item} onChange={handleInput} />
             <br /><br />
             <button onClick={addTask}>Add</button>
             <hr />
