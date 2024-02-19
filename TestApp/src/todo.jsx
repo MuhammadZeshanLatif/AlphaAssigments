@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from 'uuid'
+import AxiosPrac from "./AxiosPrac";
 const ToDo = () => {
     const [list, setList] = useState([{ val: "Test", id: uuidv4(), done: false}])
     const [item, setItem] = useState("")
@@ -47,7 +48,8 @@ const ToDo = () => {
     }
     return (
         <>
-            <h1>ToDo List</h1>
+        <AxiosPrac/>
+            {/* <h1>ToDo List</h1>
             <input type="text" value={item} onChange={handleInput} />
             <br /><br />
             <button onClick={addTask}>Add</button>
@@ -72,7 +74,7 @@ const ToDo = () => {
             <br />
             <button onClick={deleteAll}>Delete All</button>
             &nbsp;&nbsp;
-            <button onClick={doneAll}>Done All</button>
+            <button onClick={doneAll}>Done All</button> */}
 
         </>
     )

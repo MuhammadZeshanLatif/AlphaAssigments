@@ -1,9 +1,10 @@
 import './App.css'
 import { HeloUser, Amazoncards } from './GeretUser'
-import { useState } from 'react'
+import { createContext, useState } from 'react'
 import ToDo from './todo';
 import AxiosPrac from './AxiosPrac';
 import AxiosPost from './AxiosPost';
+const MyContext = createContext();
 function App() {
   // const oldPrice = ["4400", "3400", "5540", "7895"]
   // const newPrice = ["54530", "878", "89222", "4595"]
@@ -31,9 +32,12 @@ function App() {
 
   return (
     <>
-    {/* <AxiosPrac/> */}
-    {/* <ToDo/> */}
-    <AxiosPost/>
+      {/* <AxiosPrac/> */}
+      {/* <ToDo/> */}
+      <MyContext.Provider value={"Hello Zeeshan"}>
+      <ToDo />
+    </MyContext.Provider>
+      
       {/* <HeloUser name="Zeeshan" message="Hi" color={{'color':'green'}}/>
       <HeloUser name="Arman" message="From" color={{'color':'red'}}/> */}
 
@@ -57,4 +61,5 @@ function App() {
   )
 }
 
-export default App
+export default App;
+export {MyContext};

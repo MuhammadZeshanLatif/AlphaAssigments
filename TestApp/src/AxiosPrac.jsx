@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios, { Axios } from 'axios';
+import AxiosPost from './AxiosPost';
 const AxiosPrac = () => {
     const [nameList, setnameList] = useState([]);
     const printNames = () => {
@@ -11,7 +12,8 @@ const AxiosPrac = () => {
 
     return (
         <>
-            <div>AxiosPrac</div>
+        <AxiosPost/>
+            {/* <div>AxiosPrac</div>
             <button onClick={printNames}>Print</button>
             <hr />
             <ul>
@@ -20,7 +22,7 @@ const AxiosPrac = () => {
                         <li>{e.id}){e.name}</li>
                     ))
                 }
-            </ul>
+            </ul> */}
             
         </>
 
